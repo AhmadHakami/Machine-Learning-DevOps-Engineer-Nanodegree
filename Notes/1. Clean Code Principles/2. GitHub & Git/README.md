@@ -87,3 +87,8 @@ By configuring your GitHub account connection, you assure that all the contribut
 
 2. [About merge conflicts
 ](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts)
+
+3. [How to Version Control Your Production Machine Learning Models
+](https://www.datarobot.com/blog/how-to-version-control-your-production-machine-learning-models/)
+
+4. [Version control ML model][https://towardsdatascience.com/version-control-ml-model-4adb2db5f87c]
