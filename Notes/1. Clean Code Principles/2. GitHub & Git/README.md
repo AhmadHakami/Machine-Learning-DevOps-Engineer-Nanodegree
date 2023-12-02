@@ -1,11 +1,8 @@
 # Github & Git
-
-### Git vs Github
-
 This repository serves as a guide for understanding the basics of Git and GitHub.
 
 ![Git vs Github](https://miro.medium.com/v2/resize:fit:1400/1*tDz-Vkeg-yoBRcnAZ5SDow.png)
-
+_________________
 ### Clone a Repository from Github
 
 ```git clone <repository-link.git>```
@@ -87,3 +84,6 @@ By configuring your GitHub account connection, you assure that all the contribut
 
 ## Sources:
 1.  [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+
+2. [About merge conflicts
+](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts)
