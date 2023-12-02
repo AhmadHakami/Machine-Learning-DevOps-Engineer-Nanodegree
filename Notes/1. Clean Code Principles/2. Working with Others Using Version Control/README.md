@@ -95,3 +95,8 @@ By configuring your GitHub account connection, you assure that all the contribut
 ](https://www.datarobot.com/blog/how-to-version-control-your-production-machine-learning-models/)
 
 4. [Version control ML model](https://towardsdatascience.com/version-control-ml-model-4adb2db5f87c)
+
+5. [Code Review Best Practices](https://www.kevinlondon.com/2015/05/05/code-review-best-practices)
+
+6. [Code Review Best Practices
+](https://www.kevinlondon.com/2015/05/05/code-review-best-practices)
