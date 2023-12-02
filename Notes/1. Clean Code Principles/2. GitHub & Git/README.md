@@ -66,3 +66,24 @@ To connect your GitHub account, you may need to provide your credentials, which 
 3. Authenticate with GitHub from the terminal when prompted or by setting up a credential helper that stores your GitHub credentials.
 
 By configuring your GitHub account connection, you assure that all the contributions you make are attributed to you, and the code push or pull requests come from an authorized source.
+
+
+### Check Current Branch
+```git branch```
+
+### Create new branch
+```git branch <branch name>```
+
+### Create and switch to a new branch
+```git checkout -b <branch-name>```
+
+### Remove branch 
+##### requires that you are not currently on the branch you would like to delete
+```git branch -d <branch-name>```
+
+
+### Pull the latest changes on the Branch
+```git pull```
+
+## Sources:
+1.  [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
