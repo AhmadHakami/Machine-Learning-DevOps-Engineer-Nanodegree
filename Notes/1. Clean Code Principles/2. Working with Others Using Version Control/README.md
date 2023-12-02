@@ -82,6 +82,9 @@ By configuring your GitHub account connection, you assure that all the contribut
 ### Pull the latest changes on the Branch
 ```git pull```
 
+### View the log history
+```git log```
+
 ## Sources:
 1.  [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
