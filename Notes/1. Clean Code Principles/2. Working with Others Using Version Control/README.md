@@ -1,4 +1,3 @@
-
 # Github & Git
 
 This repository serves as a guide for understanding the basics of Git and GitHub.
