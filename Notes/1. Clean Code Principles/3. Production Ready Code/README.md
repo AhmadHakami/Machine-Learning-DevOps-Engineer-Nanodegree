@@ -20,9 +20,6 @@ Effective code should meet the following conditions, serving as a basis for test
 
 The `pytest` framework simplifies writing small, readable tests. It can also scale to support complex functional testing for applications and libraries.
 
-For testing ML models in production settings, it is commonly done using cloud-based software. More details will be provided in this lesson and project. Additional resources can be found [here on testing using Google's cloud-based systems](https://developers.google.com/machine-learning/testing-debugging/pipeline/deploying).
-
-
 ## Logging Messages
 
 Logging is the process of recording messages to describe the events occurring during the execution of your software.
@@ -54,3 +51,4 @@ Logging is the process of recording messages to describe the events occurring du
 4. Understanding how to pass parameters to the fixture functions using the built-in request object: [Parametrizing fixtures](https://docs.pytest.org/en/7.1.x/how-to/fixtures.html#fixture-parametrize).
 5. Additional resources on testing using Google's cloud-based systems: [Testing Debugging](https://developers.google.com/machine-learning/testing-debugging/pipeline/deploying).
 6. Why Test-Driven Development (TDD) is Essential for Good Data Science: [Here's Why](https://medium.com/@karijdempsey/test-driven-development-isessential-for-good-data-science-heres-why-db7975a03a44).
+7. For testing ML models in production settings, it is commonly done using cloud-based software. [here on testing using Google's cloud-based systems](https://developers.google.com/machine-learning/testing-debugging/pipeline/deploying).
