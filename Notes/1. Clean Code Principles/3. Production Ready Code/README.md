@@ -1,3 +1,4 @@
+
 # Production Ready Code
 
 ## Catching Errors
@@ -42,6 +43,28 @@ Logging is the process of recording messages to describe the events occurring du
 - Provide any useful information  
   Bad example:  `Failed to read location data`  
   Good example: `Failed to read location data: store_id 8324971`  
+
+## Model Drift
+
+### Understanding and Mitigating Model Drift
+
+Over time, deployed machine learning models may encounter variations in input data that can erode their performance. This phenomenon, known as model drift, necessitates periodic evaluation and updating of the model to maintain its relevance and accuracy. Addressing model drift typically involves:
+
+- Identifying and integrating new predictive features
+- Fine-tuning hyperparameters
+- Potentially developing a completely new modeling approach
+
+Staying ahead of model drift is vital for ensuring that models continue to deliver value and accurate predictions.
+
+## Automated Retraining vs. Non-Automated Retraining
+
+### Automated Retraining
+Automated retraining is ideal for models requiring frequent updates with minimal changes, such as a fraud detection model. This process ensures the model stays current with continuous data flow without significant manual intervention.
+
+### Non-Automated Retraining
+In contrast, non-automated retraining is preferred for models necessitating substantial modifications, including new features or architectures. This approach, suited for less frequent updates like those in a search engine ranking model, involves manual adjustments to ensure quality and relevance with substantial changes.
+
+Efficient retraining strategies depend on the model's update frequency and the nature of changes required. Each method has its place, with automated retraining catering to regular, minor updates, and non-automated retraining accommodating more significant, less frequent overhauls.
 
 ## Additional Reading Material
 
