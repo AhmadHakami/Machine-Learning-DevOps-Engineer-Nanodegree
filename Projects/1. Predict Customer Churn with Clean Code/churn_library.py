@@ -72,26 +72,33 @@ def perform_eda(df: pd.DataFrame):
     """
 
     # plot distribution with categorical features 
-    cat_columns = list(df.select_dtypes(include='object').columns)
-    for cat_column in cat_columns:
+    category_columns = list(df.select_dtypes(include='object').columns)
+    for column in category_columns:
         plt.figure(figsize=(7, 5))
-        df[cat_column].value_counts('normalize').plot(kind='bar', rot=45, title=f'{cat_column.capitalize()} Distribution')
+        df[column].value_counts('normalize').plot(kind='bar', rot=45, title=f'{column.capitalize()} Distribution')
         plt.ylabel('Percentage')
         plt.xlabel('Category')
-        plt.savefig(f'images\eda\{cat_column}_distribution.png')
+        plt.savefig(f'images\eda\{column}_distribution.png', bbox_inches='tight')
         # plt.show()
 
     # plot distribution of customer age
     plt.figure(figsize=(7, 5))
     df['customer_age'].plot(kind='hist', title='Customer Age Distribution')
     plt.xlabel('Age')
-    plt.savefig(f'images\eda\customer_age_distribution.png')
+    plt.savefig(f'images\eda\customer_age_distribution.png', bbox_inches='tight')
     # plt.show()
 
     # plot correlation matrix
     plt.figure(figsize=(7, 7))
     sns.heatmap(df.corr(), annot=False, cmap='Dark2_r', linewidths=2)
-    plt.savefig('images\eda\heatmap.png')
+    plt.savefig('images\eda\heatmap.png', bbox_inches='tight')
+    # plt.show()
+
+    # plot distributions of 'total_trans_ct' and add a smooth curve obtained using a kernel density estimate
+    plt.figure(figsize=(7, 7))
+    sns.histplot(df['total_trans_ct'], stat='density', kde=True)
+    plt.title('Total Transaction Distribution')
+    plt.savefig('images\eda\\total_transaction_distribution.png', bbox_inches='tight')
     # plt.show()
 
 
@@ -126,10 +133,10 @@ def perform_feature_engineering(df, response='churn'):
     """
 
     # Identify categorical columns efficiently
-    cat_columns = list(df.select_dtypes(include='object').columns)
+    category_columns = list(df.select_dtypes(include='object').columns)
 
     # Encode categorical features
-    df_encoded = encode_categorical_columns(df, cat_columns, response)
+    df_encoded = encode_categorical_columns(df, category_columns, response)
 
     # Split data into features (X) and target variable (y)
     y = df_encoded[response]
