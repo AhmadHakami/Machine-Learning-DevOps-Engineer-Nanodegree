@@ -52,7 +52,7 @@ def process_df(df: pd.DataFrame):
     """
 
     # Create a new 'Churn' column based on the 'Attrition_Flag' column
-    df['Churn'] = df['Attrition_Flag'].apply(lambda val: 0 if val == "Existing Customer" else 1)
+    df['Churn'] = df['Attrition_Flag'].apply(lambda val: 0 if val == 'Existing Customer' else 1)
 
     # Convert column names to lowercase for consistency
     df.columns = [column.lower() for column in df.columns]
@@ -91,7 +91,7 @@ def perform_eda(df: pd.DataFrame):
     # plot correlation matrix
     plt.figure(figsize=(7, 7))
     sns.heatmap(df.corr(), annot=False, cmap='Dark2_r', linewidths=2)
-    plt.savefig('images\eda\heatmap.png', bbox_inches='tight')
+    plt.savefig('images\eda\heatmap.png')
     # plt.show()
 
 
@@ -110,7 +110,6 @@ def encode_categorical_columns(df, category_columns, response):
     # Apply onehot encoding to the specified categorical columns
     df_encoded = pd.get_dummies(df, columns=category_columns, drop_first=True, prefix=response)
     
-    # Return the DataFrame with one-hot encoded columns
     return df_encoded
 
 
