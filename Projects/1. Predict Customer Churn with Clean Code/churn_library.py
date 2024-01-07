@@ -44,7 +44,8 @@ def process_df(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: The processed dataframe
     """
     # Create a new 'Churn' column based on the 'Attrition_Flag' column
-    df['Churn'] = df['Attrition_Flag'].apply(lambda val: 0 if val == 'Existing Customer' else 1)
+    df['Churn'] = df['Attrition_Flag'].apply(
+        lambda val: 0 if val == 'Existing Customer' else 1)
 
     # Convert column names to lowercase for consistency
     df.columns = [column.lower() for column in df.columns]
@@ -53,7 +54,7 @@ def process_df(df: pd.DataFrame) -> pd.DataFrame:
 
 def perform_eda(df: pd.DataFrame) -> None:
     """
-    Perform exploratory data analysis (EDA) on the given dataframe 
+    Perform exploratory data analysis (EDA) on the given dataframe
     and save figures to the 'images/eda' folder
     Args:
         df (pd.DataFrame): The pandas dataframe to analyze
@@ -63,21 +64,27 @@ def perform_eda(df: pd.DataFrame) -> None:
     # Identify categorical columns efficiently
     category_columns = list(df.select_dtypes(include='object').columns)
 
-    # plot distribution with categorical features 
+    # plot distribution with categorical features
     for column in category_columns:
         plt.figure(figsize=(7, 5))
-        df[column].value_counts(normalize=True).plot(kind='bar',
-                                                     rot=45,
-                                                     title=f'{column.capitalize()} Distribution')
+        df[column].value_counts(
+            normalize=True).plot(
+            kind='bar',
+            rot=45,
+            title=f'{column.capitalize()} Distribution')
         plt.ylabel('Percentage')
         plt.xlabel('Category')
-        plt.savefig(f'images/eda/{column}_distribution.png', bbox_inches='tight')
+        plt.savefig(
+            f'images/eda/{column}_distribution.png',
+            bbox_inches='tight')
 
     # plot distribution of customer age
     plt.figure(figsize=(7, 5))
     df['customer_age'].plot(kind='hist', title='Customer Age Distribution')
     plt.xlabel('Age')
-    plt.savefig(f'images/eda/customer_age_distribution.png', bbox_inches='tight')
+    plt.savefig(
+        f'images/eda/customer_age_distribution.png',
+        bbox_inches='tight')
 
     # plot correlation matrix
     plt.figure(figsize=(7, 7))
@@ -88,7 +95,9 @@ def perform_eda(df: pd.DataFrame) -> None:
     plt.figure(figsize=(7, 7))
     sns.histplot(df['total_trans_ct'], stat='density', kde=True)
     plt.title('Total Transaction Distribution')
-    plt.savefig('images/eda/total_transaction_distribution.png', bbox_inches='tight')
+    plt.savefig(
+        'images/eda/total_transaction_distribution.png',
+        bbox_inches='tight')
 
 
 def encode_categorical_columns(dataframe, category_columns, response):
@@ -294,7 +303,8 @@ if __name__ == "__main__":
 
     # Perform feature engineering and split data
     print("Performing feature engineering and splitting data...")
-    X_train, X_test, y_train, y_test = perform_feature_engineering(processed_bank_data)
+    X_train, X_test, y_train, y_test = perform_feature_engineering(
+        processed_bank_data)
 
     # Train models
     print("Training & Save models and plotting ROC curves...")
