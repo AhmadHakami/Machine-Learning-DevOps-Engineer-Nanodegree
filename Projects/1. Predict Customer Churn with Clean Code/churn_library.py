@@ -29,7 +29,7 @@ def import_data(df_path: str) -> pd.DataFrame:
         pd.DataFrame: The read dataframe
     """
     # read dataframe using path directory
-    bank_data = pd.read_csv(df_path, nrows=100)
+    bank_data = pd.read_csv(df_path)
     return bank_data
 
 
