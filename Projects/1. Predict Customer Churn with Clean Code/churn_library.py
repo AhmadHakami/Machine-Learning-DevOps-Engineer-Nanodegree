@@ -214,13 +214,12 @@ def classification_report_image(y_train,
     plt.savefig('images/results/logistic_results.png', bbox_inches='tight')
 
 
-def feature_importance_plot(model, x_features, output_pth):
-    f'''
-    creates and stores the feature importances in {output_pth}
+def feature_importance_plot(model, x_features):
+    '''
+    creates and stores the feature importances in images/results
     input:
         model: model object containing feature_importances_
         x_features: pandas dataframe of X values
-        output_pth: path to store the figure
 
     output:
         None
@@ -248,7 +247,7 @@ def feature_importance_plot(model, x_features, output_pth):
     plt.xticks(range(x_features.shape[1]), names, rotation=90)
 
     # Save the plot to the specified path
-    plt.savefig(f'{output_pth}/feature_importances.png', bbox_inches='tight')
+    plt.savefig(f'images/results/feature_importances.png', bbox_inches='tight')
 
 
 def train_models(X_train, X_test, y_train, y_test):
@@ -287,6 +286,26 @@ def train_models(X_train, X_test, y_train, y_test):
     plt.title("ROC curves")
     plt.savefig('images/results/roc_curve_result.png', bbox_inches='tight')
 
+    # _______________________ Classification Report ________________________________
+
+    y_train_preds_rf = cv_rfc.best_estimator_.predict(X_train)
+    y_test_preds_rf = cv_rfc.best_estimator_.predict(X_test)
+
+    y_train_preds_lr = lrc.predict(X_train)
+    y_test_preds_lr = lrc.predict(X_test)
+
+    classification_report_image(y_train,
+                                y_test,
+                                y_train_preds_lr,
+                                y_train_preds_rf,
+                                y_test_preds_lr,
+                                y_test_preds_rf)
+    
+    # ______________________ Feature importance ____________________________________
+    feature_importance_plot(cv_rfc, X_train)
+
+
+
 
 if __name__ == "__main__":
     # Import data
@@ -306,8 +325,8 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = perform_feature_engineering(
         processed_bank_data)
 
-    # Train models
-    print("Training & Save models and plotting ROC curves...")
+    # Train models and plotting
+    print("Training & Save models and plotting...")
     train_models(X_train, X_test, y_train, y_test)
 
     print("All steps completed successfully!")
