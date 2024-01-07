@@ -1,0 +1,14 @@
+root - INFO - Starting test suite for churn_library.py file
+root - INFO - Testing import_data function
+root - INFO - Testing import_data: SUCCESS
+root - INFO - Testing process_df function
+root - INFO - Testing process_df: SUCCESS
+root - INFO - Testing perform_eda function
+root - INFO - Testing perform_eda: SUCCESS
+root - INFO - Testing encode_categorical_columns function
+root - INFO - Testing encode_categorical_columns: SUCCESS
+root - INFO - Testing perform_feature_engineering function
+root - INFO - Testing perform_feature_engineering: SUCCESS
+root - INFO - Testing train_models function
+root - INFO - Testing train_models: SUCCESS
+root - INFO - Test suite completed
